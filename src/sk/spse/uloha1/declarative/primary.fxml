@@ -6,23 +6,26 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox accessibleRoleDescription="parent" alignment="CENTER" spacing="20" stylesheets="@styl.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sk.spse.uloha1.declarative.Controller">
+<VBox styleClass="parent" alignment="CENTER" spacing="20"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="sk.spse.uloha1.declarative.Controller">
     <padding>
-        <Insets topRightBottomLeft="20" />
+        <Insets topRightBottomLeft="20"/>
     </padding>
     <children>
-        <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="270.0" spacing="10">
+        <HBox alignment="CENTER_LEFT" spacing="10">
             <children>
-                <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="243.0" text="Stupne Celsia:" />
-                <TextField fx:id="field1" onKeyTyped="#onKeyTyped" prefHeight="53.0" prefWidth="188.0" promptText="Zadaj číslo" />
-                <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="209.0" text="°C" />
+                <Label styleClass="text" text="Stupne Celsia:" prefWidth="220" alignment="CENTER_RIGHT"/>
+                <TextField styleClass="text-field" fx:id="field1" onKeyTyped="#onKeyTyped" prefWidth="190" promptText="Zadaj číslo"/>
+                <Label styleClass="text" text="°C"/>
             </children>
         </HBox>
-        <HBox alignment="CENTER" spacing="10">
+        <HBox alignment="CENTER_LEFT" spacing="10">
             <children>
-                <Label alignment="CENTER_RIGHT" text="Stupne Fahrenheita:" />
-                <TextField fx:id="field2" onKeyTyped="#onKeyTyped" promptText="Automaticky" />
-                <Label text="°F" />
+                <Label styleClass="text" text="Stupne Fahrenheita:" prefWidth="220" alignment="CENTER_RIGHT"/>
+                <TextField styleClass="text-field" fx:id="field2" onKeyTyped="#onKeyTyped" prefWidth="190" promptText="Automaticky"/>
+                <Label styleClass="text" text="°F"/>
             </children>
         </HBox>
     </children>
