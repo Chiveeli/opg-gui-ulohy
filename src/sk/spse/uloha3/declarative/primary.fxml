@@ -2,26 +2,58 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<HBox xmlns="http://javafx.com/javafx/21"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="sk.spse.uloha3.declarative.Controller"
-      alignment="CENTER"
-      spacing="20">
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-    <padding>
-        <Insets topRightBottomLeft="10" />
-    </padding>
-
-    <Label text="Počítadlo:" />
-
-    <TextField fx:id="counterField"
-               text="0"
-               editable="false"
-               style="-fx-padding: 10 20 10 20;" />
-
-    <Button text="Plus 1"
-            onAction="#incrementCounter" />
-</HBox>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sk.spse.uloha3.declarative.Controller">
+    <top>
+        <HBox alignment="CENTER">
+            <padding>
+                <Insets topRightBottomLeft="15"/>
+            </padding>
+            <Text text="Stredná priemyselná škola elektrotechnická, Prešov">
+                <font>
+                    <Font size="20"/>
+                </font>
+            </Text>
+        </HBox>
+    </top>
+    <left>
+        <ImageView fitWidth="180" fitHeight="180" preserveRatio="true">
+            <image>
+                <Image url="@spse.png"/>
+            </image>
+            <BorderPane.margin>
+                <Insets topRightBottomLeft="15"/>
+            </BorderPane.margin>
+        </ImageView>
+    </left>
+    <center>
+        <VBox spacing="5">
+            <BorderPane.margin>
+                <Insets top="15" right="15" bottom="10"/>
+            </BorderPane.margin>
+            <TextArea wrapText="true" editable="false"
+                      text="Vážení rodičia a milí žiaci základných škôl,&#10;&#10;radi by sme Vás privítali v priestoroch našej školy dňa 10. 02. 2026 (utorok) od 13.00 do 17.00 h na Dni otvorených dverí, kde by sme Vám chceli predstaviť naše študijné odbory."
+                      prefWidth="400" prefHeight="180"/>
+            <Hyperlink text="https://www.spse-po.sk" onAction="#openLink"/>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT">
+            <padding>
+                <Insets topRightBottomLeft="10"/>
+            </padding>
+            <Button text="Beriem na vedomie" onAction="#close"/>
+        </HBox>
+    </bottom>
+</BorderPane>

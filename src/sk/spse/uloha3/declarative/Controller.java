@@ -1,21 +1,21 @@
 package sk.spse.uloha3.declarative;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
 
-/**
- * Controller pre FXML súbor – obsahuje logiku aplikácie
- */
 public class Controller {
 
-    private int counter = 0;
+    @FXML
+    private void openLink() {
+        try {
+            java.awt.Desktop.getDesktop().browse(new java.net.URI("https://www.spse-po.sk"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
-    private TextField counterField;
-
-    @FXML
-    private void incrementCounter() {
-        counter++;
-        counterField.setText(String.valueOf(counter));
+    private void close() {
+        Platform.exit();
     }
 }
