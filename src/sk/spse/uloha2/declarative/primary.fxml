@@ -3,26 +3,38 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 
-<HBox xmlns="http://javafx.com/javafx/21"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="sk.spse.uloha2.declarative.Controller"
-      alignment="CENTER"
-      spacing="20">
-
+<GridPane xmlns="http://javafx.com/javafx/21"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="sk.spse.uloha2.declarative.Controller"
+          alignment="CENTER"
+          hgap="10" vgap="15">
     <padding>
-        <Insets topRightBottomLeft="10" />
+        <Insets topRightBottomLeft="20"/>
     </padding>
-
-    <Label text="Počítadlo:" />
-
-    <TextField fx:id="counterField"
-               text="0"
-               editable="false"
-               style="-fx-padding: 10 20 10 20;" />
-
-    <Button text="Plus 1"
-            onAction="#incrementCounter" />
-</HBox>
+    <Label text="Užívateľské meno:" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.halignment="RIGHT"/>
+    <TextField fx:id="usernameField" promptText="zadaj meno" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label text="Heslo:" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="RIGHT"/>
+    <PasswordField fx:id="passwordField" promptText="zadaj heslo" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Pohlavie:" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.halignment="RIGHT"/>
+    <HBox spacing="10" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <fx:define>
+            <ToggleGroup fx:id="pohlavieGroup"/>
+        </fx:define>
+        <RadioButton text="Muž" toggleGroup="$pohlavieGroup" selected="true"/>
+        <RadioButton text="Žena" toggleGroup="$pohlavieGroup"/>
+    </HBox>
+    <Separator GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+    <HBox spacing="10" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="4"
+          GridPane.columnSpan="2">
+        <Button text="Registrovať" onAction="#register"/>
+        <Button text="Zavrieť" onAction="#close"/>
+    </HBox>
+</GridPane>
