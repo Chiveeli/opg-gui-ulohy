@@ -7,34 +7,41 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="sk.spse.uloha4.declarative.Controller">
-    <TilePane prefColumns="4" VBox.vgrow="ALWAYS">
-        <VBox fx:id="vbox1" alignment="CENTER" prefWidth="175" prefHeight="300" style="-fx-background-color: blue;">
-            <ImageView fitWidth="160" fitHeight="280" preserveRatio="true">
+    <HBox VBox.vgrow="ALWAYS">
+        <VBox fx:id="vbox1" alignment="CENTER" prefWidth="175" prefHeight="250"
+              minWidth="175" minHeight="250" maxWidth="175" maxHeight="250"
+              style="-fx-background-color: #c1659a;">
+            <ImageView fx:id="img1" fitWidth="120" fitHeight="180" preserveRatio="true">
                 <image><Image url="@soup2.png"/></image>
             </ImageView>
         </VBox>
-        <VBox fx:id="vbox2" alignment="CENTER" prefWidth="175" prefHeight="300" style="-fx-background-color: yellow;">
-            <ImageView fitWidth="160" fitHeight="280" preserveRatio="true">
+        <VBox fx:id="vbox2" alignment="CENTER" prefWidth="175" prefHeight="250"
+              minWidth="175" minHeight="250" maxWidth="175" maxHeight="250"
+              style="-fx-background-color: #b8c9e0;">
+            <ImageView fx:id="img2" fitWidth="120" fitHeight="180" preserveRatio="true">
                 <image><Image url="@soup2.png"/></image>
             </ImageView>
         </VBox>
-        <VBox fx:id="vbox3" alignment="CENTER" prefWidth="175" prefHeight="300" style="-fx-background-color: green;">
-            <ImageView fitWidth="160" fitHeight="280" preserveRatio="true">
+        <VBox fx:id="vbox3" alignment="CENTER" prefWidth="175" prefHeight="250"
+              minWidth="175" minHeight="250" maxWidth="175" maxHeight="250"
+              style="-fx-background-color: #b8c9e0;">
+            <ImageView fx:id="img3" fitWidth="120" fitHeight="180" preserveRatio="true">
                 <image><Image url="@soup2.png"/></image>
             </ImageView>
         </VBox>
-        <VBox fx:id="vbox4" alignment="CENTER" prefWidth="175" prefHeight="300" style="-fx-background-color: red;">
-            <ImageView fitWidth="160" fitHeight="280" preserveRatio="true">
+        <VBox fx:id="vbox4" alignment="CENTER" prefWidth="175" prefHeight="250"
+              minWidth="175" minHeight="250" maxWidth="175" maxHeight="250"
+              style="-fx-background-color: #4caf50;">
+            <ImageView fx:id="img4" fitWidth="120" fitHeight="180" preserveRatio="true">
                 <image><Image url="@soup2.png"/></image>
             </ImageView>
         </VBox>
-    </TilePane>
+    </HBox>
     <BorderPane>
         <padding>
             <Insets topRightBottomLeft="10"/>
