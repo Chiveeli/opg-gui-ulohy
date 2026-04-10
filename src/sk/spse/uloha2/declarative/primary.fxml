@@ -19,22 +19,38 @@
     <padding>
         <Insets topRightBottomLeft="20"/>
     </padding>
-    <Label text="Užívateľské meno:" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.halignment="RIGHT"/>
-    <TextField fx:id="usernameField" promptText="zadaj meno" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-    <Label text="Heslo:" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="RIGHT"/>
-    <PasswordField fx:id="passwordField" promptText="zadaj heslo" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-    <Label text="Pohlavie:" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.halignment="RIGHT"/>
+    <fx:define>
+        <ToggleGroup fx:id="pohlavieGroup"/>
+    </fx:define>
+    <Label text="Užívateľské meno:"
+           style="-fx-text-fill: green; -fx-font-family: Serif;"
+           GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.halignment="RIGHT"/>
+    <TextField fx:id="usernameField" promptText="zadaj meno"
+               prefWidth="150"
+               style="-fx-border-color: green; -fx-font-family: Serif; -fx-background-radius: 7px; -fx-border-radius: 7px;"
+               GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label text="Heslo:"
+           style="-fx-text-fill: green; -fx-font-family: Serif;"
+           GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="RIGHT"/>
+    <PasswordField fx:id="passwordField" promptText="zadaj heslo"
+                   prefWidth="150"
+                   style="-fx-border-color: red; -fx-font-family: Serif; -fx-background-radius: 7px; -fx-border-radius: 7px;"
+                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Pohlavie:"
+           style="-fx-text-fill: green; -fx-font-family: Serif;"
+           GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.halignment="RIGHT"/>
     <HBox spacing="10" alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2">
-        <fx:define>
-            <ToggleGroup fx:id="pohlavieGroup"/>
-        </fx:define>
-        <RadioButton text="Muž" toggleGroup="$pohlavieGroup" selected="true"/>
-        <RadioButton text="Žena" toggleGroup="$pohlavieGroup"/>
+        <RadioButton text="Muž" toggleGroup="$pohlavieGroup" selected="true"
+                     style="-fx-text-fill: blue; -fx-font-family: Serif;"/>
+        <RadioButton text="Žena" toggleGroup="$pohlavieGroup"
+                     style="-fx-text-fill: blue; -fx-font-family: Serif;"/>
     </HBox>
     <Separator GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
-    <HBox spacing="10" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="4"
+    <HBox spacing="10" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="4"
           GridPane.columnSpan="2">
-        <Button text="Registrovať" onAction="#register"/>
-        <Button text="Zavrieť" onAction="#close"/>
+        <Button text="Registrovať" onAction="#register"
+                style="-fx-text-fill: brown; -fx-font-family: Serif; -fx-background-radius: 7px; -fx-border-radius: 7px;"/>
+        <Button text="Zavrieť" onAction="#close"
+                style="-fx-text-fill: brown; -fx-font-family: Serif; -fx-background-radius: 7px; -fx-border-radius: 7px;"/>
     </HBox>
 </GridPane>
