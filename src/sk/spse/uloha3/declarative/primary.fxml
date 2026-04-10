@@ -9,26 +9,24 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21"
+<BorderPane xmlns="http://javafx.com/javafx/25"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sk.spse.uloha3.declarative.Controller">
+            fx:controller="sk.spse.uloha3.declarative.Controller"
+            stylesheets="@styl.css">
     <top>
         <HBox alignment="CENTER">
             <padding>
                 <Insets topRightBottomLeft="15"/>
             </padding>
-            <Text text="Stredná priemyselná škola elektrotechnická, Prešov">
-                <font>
-                    <Font size="20"/>
-                </font>
-            </Text>
+            <Text text="Stredná priemyselná škola elektrotechnická, Prešov"
+                  styleClass="title-text"/>
         </HBox>
     </top>
     <left>
-        <ImageView fitWidth="180" fitHeight="180" preserveRatio="true">
+        <ImageView fitWidth="200" fitHeight="200" preserveRatio="true"
+                   styleClass="logo" rotate="-15">
             <image>
                 <Image url="@spse.png"/>
             </image>
@@ -44,16 +42,20 @@
             </BorderPane.margin>
             <TextArea wrapText="true" editable="false"
                       text="Vážení rodičia a milí žiaci základných škôl,&#10;&#10;radi by sme Vás privítali v priestoroch našej školy dňa 10. 02. 2026 (utorok) od 13.00 do 17.00 h na Dni otvorených dverí, kde by sme Vám chceli predstaviť naše študijné odbory."
-                      prefWidth="400" prefHeight="180"/>
+                      prefWidth="400" prefHeight="200"
+                      styleClass="text-area"/>
             <Hyperlink text="https://www.spse-po.sk" onAction="#openLink"/>
         </VBox>
     </center>
     <bottom>
-        <HBox alignment="CENTER_RIGHT">
+        <BorderPane>
             <padding>
                 <Insets topRightBottomLeft="10"/>
             </padding>
-            <Button text="Beriem na vedomie" onAction="#close"/>
-        </HBox>
+            <right>
+                <Button text="Beriem na vedomie" onAction="#close"
+                        styleClass="button"/>
+            </right>
+        </BorderPane>
     </bottom>
 </BorderPane>

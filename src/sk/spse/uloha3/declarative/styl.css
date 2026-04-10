@@ -1,0 +1,49 @@
+.root {
+    -fx-background-image: url("ele-wallpaper2.jpeg");
+    -fx-background-size: cover;
+}
+
+.title-text {
+    -fx-fill: #b80101;
+    -fx-font-weight: bold;
+    -fx-font-family: Serif;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(gaussian, #dee1ea, 20, 0.9, 0, 0);
+}
+
+.text-area {
+    -fx-background-color: transparent;
+}
+
+.text-area .content {
+    -fx-background-color: #FFFA;
+}
+
+.text-area > .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area > .scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+.button {
+    -fx-background-color: #FFFA;
+    -fx-font-family: Serif;
+    -fx-font-size: 14px;
+    -fx-border-color: black;
+}
+
+.hyperlink {
+    -fx-font-weight: bold;
+    -fx-font-family: Serif;
+    -fx-effect: dropshadow(gaussian, #dee1ea, 20, 0.9, 0, 0);
+}
+
+.logo:hover {
+    -fx-rotate: 0;
+}
+
+.logo:pressed {
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
